@@ -30,25 +30,11 @@
         .info {
             margin: 10px 0;
         }
-        .social {
-            margin-top: 20px;
-        }
-        .social a {
-            color: #3b5998; /* Màu cho liên kết Facebook */
-            text-decoration: none;
-            display: flex; /* Sử dụng Flexbox để căn giữa logo và văn bản */
-            align-items: center; /* Căn giữa theo chiều dọc */
-        }
         .avatar {
             width: 150px; /* Kích thước ảnh đại diện */
             height: 150px; /* Kích thước ảnh đại diện */
             border-radius: 50%; /* Để tạo hình tròn */
             margin-right: 20px; /* Khoảng cách giữa ảnh và tên */
-        }
-        .logo {
-            width: 24px; /* Kích thước logo */
-            height: 24px; /* Kích thước logo */
-            margin-right: 8px; /* Khoảng cách giữa logo và văn bản */
         }
         video {
             position: absolute; /* Để video ở nền */
@@ -61,6 +47,40 @@
             z-index: 0; /* Để video ở dưới cùng */
         }
 
+        /* CSS chung cho các nút */
+        .button {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            width: fit-content;
+        }
+
+        .button img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        /* Nút Facebook */
+        .facebook-button {
+            background-color: #1877f2; /* Màu nền Facebook */
+        }
+
+        /* Nút Discord */
+        .discord-button {
+            background-color: #23272a; /* Màu nền Discord */
+        }
+
+        /* Hover effect */
+        .button:hover {
+            opacity: 0.9;
+        }
+
         /* Media query cho thiết bị di động */
         @media only screen and (max-width: 600px) {
             body {
@@ -70,30 +90,31 @@
             .container {
                 flex-direction: column; /* Chuyển từ dạng hàng sang dạng cột để căn chỉnh tốt hơn */
                 text-align: center; /* Căn giữa nội dung trên màn hình nhỏ */
+                padding: 10px; /* Giảm padding của container trên màn hình nhỏ */
             }
 
             .avatar {
-                width: 100px; /* Giảm kích thước ảnh đại diện */
-                height: 100px; /* Giảm kích thước ảnh đại diện */
+                width: 80px; /* Giảm kích thước ảnh đại diện */
+                height: 80px; /* Giảm kích thước ảnh đại diện */
                 margin: 0 auto 10px; /* Căn giữa ảnh đại diện và tạo khoảng cách dưới */
             }
 
+            h1 {
+                font-size: 18px; /* Giảm kích thước tiêu đề */
+            }
+
             .info {
-                font-size: 14px; /* Giảm kích thước chữ cho màn hình nhỏ */
+                font-size: 12px; /* Giảm kích thước chữ trong phần thông tin */
             }
 
-            .social {
-                display: flex;
-                justify-content: center; /* Căn giữa các liên kết mạng xã hội */
+            .button {
+                font-size: 12px; /* Giảm kích thước chữ trong các nút */
+                padding: 8px 16px; /* Giảm padding trong các nút */
             }
 
-            .social a {
-                font-size: 14px; /* Giảm kích thước chữ liên kết */
-            }
-
-            .logo {
-                width: 20px; /* Giảm kích thước logo */
-                height: 20px; /* Giảm kích thước logo */
+            .button img {
+                width: 20px; /* Giảm kích thước logo trong các nút */
+                height: 20px;
             }
 
             video {
@@ -122,16 +143,18 @@
         <div class="info">
             <strong>Mô tả:</strong> Dy_Nam chuyên code script.
         </div>
-        <div class="social">
-            <a href="https://www.facebook.com/CapybaraDuy" target="_blank">
-                <img src="img/facebook.png" alt="Facebook Logo" class="logo">Facebook
-            </a>
-        </div>
-        <div class="social">
-            <a href="https://discord.gg/kEtMGjgF" target="_blank">
-                <img src="img/discord.png" alt="Discord Logo" class="logo">Nhấn vào để truy cập máy chủ Discord
-            </a>
-        </div>
+        
+        <!-- Nút Facebook -->
+        <a href="https://www.facebook.com/CapybaraDuy" class="button facebook-button" target="_blank">
+            <img src="img/facebook.png" alt="Facebook Logo">Facebook
+        </a>
+
+        <br><br>
+
+        <!-- Nút Discord -->
+        <a href="https://discord.gg/kEtMGjgF" class="button discord-button" target="_blank">
+            <img src="img/discord.png" alt="Discord Logo">Discord
+        </a>
     </div>
 </div>
 
