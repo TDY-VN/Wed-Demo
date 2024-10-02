@@ -9,85 +9,95 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            color: white;
-            overflow: hidden;
+            color: white; /* Để văn bản có màu trắng cho dễ đọc */
+            overflow: hidden; /* Để ẩn thanh cuộn nếu video lớn */
         }
-
         h1 {
-            color: #fff;
+            color: #fff; /* Đặt màu tiêu đề trắng */
         }
-
         .container {
             max-width: 600px;
             margin: auto;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.7); /* Nền tối cho nội dung */
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column; /* Bố trí theo cột để dễ chỉnh trên điện thoại */
-            align-items: center;
-            position: relative;
-            z-index: 1;
+            display: flex; /* Sử dụng Flexbox để bố trí */
+            align-items: center; /* Căn giữa theo chiều dọc */
+            position: relative; /* Để sử dụng absolute cho video */
+            z-index: 1; /* Để nội dung nổi trên video */
         }
-
         .info {
             margin: 10px 0;
-            text-align: center;
         }
-
         .social {
             margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
         }
-
         .social a {
-            color: white; /* Màu trắng cho logo và chữ */
+            color: #3b5998; /* Màu cho liên kết Facebook */
             text-decoration: none;
-            display: flex;
-            align-items: center;
+            display: flex; /* Sử dụng Flexbox để căn giữa logo và văn bản */
+            align-items: center; /* Căn giữa theo chiều dọc */
         }
-
         .avatar {
-            width: 100%; /* Đặt chiều rộng 100% cho ảnh đại diện để căn chỉnh */
-            max-width: 150px; /* Giới hạn kích thước tối đa */
-            height: auto; /* Giữ tỷ lệ ảnh */
-            border-radius: 50%;
-            margin-bottom: 20px;
+            width: 150px; /* Kích thước ảnh đại diện */
+            height: 150px; /* Kích thước ảnh đại diện */
+            border-radius: 50%; /* Để tạo hình tròn */
+            margin-right: 20px; /* Khoảng cách giữa ảnh và tên */
         }
-
         .logo {
-            width: 32px; /* Tăng kích thước logo trên di động */
-            height: auto;
+            width: 24px; /* Kích thước logo */
+            height: 24px; /* Kích thước logo */
+            margin-right: 8px; /* Khoảng cách giữa logo và văn bản */
         }
-
         video {
-            position: absolute;
+            position: absolute; /* Để video ở nền */
             top: 50%;
             left: 50%;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover; /* Để video làm đầy màn hình */
             transform: translate(-50%, -50%);
-            z-index: 0;
+            z-index: 0; /* Để video ở dưới cùng */
         }
 
-        /* Media query cho màn hình lớn hơn */
-        @media (min-width: 768px) {
+        /* Media query cho thiết bị di động */
+        @media only screen and (max-width: 600px) {
+            body {
+                padding: 10px; /* Giảm khoảng cách padding cho màn hình nhỏ */
+            }
+
             .container {
-                flex-direction: row; /* Bố trí ngang trên màn hình lớn */
-                justify-content: space-between;
+                flex-direction: column; /* Chuyển từ dạng hàng sang dạng cột để căn chỉnh tốt hơn */
+                text-align: center; /* Căn giữa nội dung trên màn hình nhỏ */
             }
 
             .avatar {
-                margin-right: 20px;
-                margin-bottom: 0;
+                width: 100px; /* Giảm kích thước ảnh đại diện */
+                height: 100px; /* Giảm kích thước ảnh đại diện */
+                margin: 0 auto 10px; /* Căn giữa ảnh đại diện và tạo khoảng cách dưới */
             }
 
             .info {
-                text-align: left; /* Canh trái trên màn hình lớn */
+                font-size: 14px; /* Giảm kích thước chữ cho màn hình nhỏ */
+            }
+
+            .social {
+                display: flex;
+                justify-content: center; /* Căn giữa các liên kết mạng xã hội */
+            }
+
+            .social a {
+                font-size: 14px; /* Giảm kích thước chữ liên kết */
+            }
+
+            .logo {
+                width: 20px; /* Giảm kích thước logo */
+                height: 20px; /* Giảm kích thước logo */
+            }
+
+            video {
+                object-fit: contain; /* Đảm bảo video hiển thị phù hợp trên màn hình nhỏ */
             }
         }
     </style>
@@ -116,8 +126,10 @@
             <a href="https://www.facebook.com/CapybaraDuy" target="_blank">
                 <img src="img/facebook.png" alt="Facebook Logo" class="logo">Facebook
             </a>
+        </div>
+        <div class="social">
             <a href="https://discord.gg/kEtMGjgF" target="_blank">
-                <img src="img/discord.png" alt="Discord Logo" class="logo">Discord
+                <img src="img/discord.png" alt="Discord Logo" class="logo">Nhấn vào để truy cập máy chủ Discord
             </a>
         </div>
     </div>
