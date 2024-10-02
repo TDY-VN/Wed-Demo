@@ -9,56 +9,86 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            color: white; /* Để văn bản có màu trắng cho dễ đọc */
-            overflow: hidden; /* Để ẩn thanh cuộn nếu video lớn */
+            color: white;
+            overflow: hidden;
         }
+
         h1 {
-            color: #fff; /* Đặt màu tiêu đề trắng */
+            color: #fff;
         }
+
         .container {
             max-width: 600px;
             margin: auto;
-            background: rgba(0, 0, 0, 0.7); /* Nền tối cho nội dung */
+            background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            display: flex; /* Sử dụng Flexbox để bố trí */
-            align-items: center; /* Căn giữa theo chiều dọc */
-            position: relative; /* Để sử dụng absolute cho video */
-            z-index: 1; /* Để nội dung nổi trên video */
+            display: flex;
+            flex-direction: column; /* Bố trí theo cột để dễ chỉnh trên điện thoại */
+            align-items: center;
+            position: relative;
+            z-index: 1;
         }
+
         .info {
             margin: 10px 0;
+            text-align: center;
         }
+
         .social {
             margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
+
         .social a {
-            color: #3b5998; /* Màu cho liên kết Facebook */
+            color: white; /* Màu trắng cho logo và chữ */
             text-decoration: none;
-            display: flex; /* Sử dụng Flexbox để căn giữa logo và văn bản */
-            align-items: center; /* Căn giữa theo chiều dọc */
+            display: flex;
+            align-items: center;
         }
+
         .avatar {
-            width: 150px; /* Kích thước ảnh đại diện */
-            height: 150px; /* Kích thước ảnh đại diện */
-            border-radius: 50%; /* Để tạo hình tròn */
-            margin-right: 20px; /* Khoảng cách giữa ảnh và tên */
+            width: 100%; /* Đặt chiều rộng 100% cho ảnh đại diện để căn chỉnh */
+            max-width: 150px; /* Giới hạn kích thước tối đa */
+            height: auto; /* Giữ tỷ lệ ảnh */
+            border-radius: 50%;
+            margin-bottom: 20px;
         }
+
         .logo {
-            width: 24px; /* Kích thước logo */
-            height: 24px; /* Kích thước logo */
-            margin-right: 8px; /* Khoảng cách giữa logo và văn bản */
+            width: 32px; /* Tăng kích thước logo trên di động */
+            height: auto;
         }
+
         video {
-            position: absolute; /* Để video ở nền */
+            position: absolute;
             top: 50%;
             left: 50%;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Để video làm đầy màn hình */
+            object-fit: cover;
             transform: translate(-50%, -50%);
-            z-index: 0; /* Để video ở dưới cùng */
+            z-index: 0;
+        }
+
+        /* Media query cho màn hình lớn hơn */
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row; /* Bố trí ngang trên màn hình lớn */
+                justify-content: space-between;
+            }
+
+            .avatar {
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+
+            .info {
+                text-align: left; /* Canh trái trên màn hình lớn */
+            }
         }
     </style>
 </head>
@@ -86,10 +116,8 @@
             <a href="https://www.facebook.com/CapybaraDuy" target="_blank">
                 <img src="img/facebook.png" alt="Facebook Logo" class="logo">Facebook
             </a>
-        </div>
-        <div class="social">
             <a href="https://discord.gg/kEtMGjgF" target="_blank">
-                <img src="img/discord.png" alt="Discord Logo" class="logo">Nhấn vào để truy cập máy chủ Discord
+                <img src="img/discord.png" alt="Discord Logo" class="logo">Discord
             </a>
         </div>
     </div>
